@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+@mixin styles($mode){
+    @each $key , $colors in $themes{
+        @if $mode == $key {
+            @each $prop , $value in $colors {
+                --#{$prop} : #{$value};
+            }
+        }
+    }
+}
